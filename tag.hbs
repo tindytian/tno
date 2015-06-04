@@ -1,0 +1,33 @@
+{{!< default}}
+
+
+{{> side-panel}}
+ <div class="main-post-list col-md-8">
+    <div class="container">
+      <h1 class="archive-title">Tag: {{tag.name}}</h1>
+      <hr class="section-title__divider" />
+      <div class="main-post-list">
+          <ol class="post-list">
+            {{#foreach posts}}
+            <li class="animated fadeInRight duration-15 delay-0{{@index}}">
+              <h2 class="post-list__post-title post-title">
+                <a href="{{url}}" title="link to {{{title}}}">{{{title}}}</a>
+              </h2>
+              <p class="excerpt">{{excerpt characters="200"}}&hellip;</p>
+              <div class="post-list__meta">
+                  <time datetime="{{date format="DD MMM YYYY"}}" class="post-list__meta--date date">{{date format="DD MMM YYYY"}}</time> &#8226;
+                  <span class="post-list__meta--tags tags">
+                  <i class='fa fa-tags'></i>{{#foreach tags}}
+                  <a href="{{url}}#blog" title="{{name}}"> {{name}}</a>
+                    {{#if @last}}{{else}}, {{/if}}{{/foreach}}</span>
+                  <a class="btn btn-primary" href={{url}}>阅读全文</a>
+              </div>
+              <hr class="post-list__divider" />
+            </li>
+            {{/foreach}}
+          </ol>
+      {{pagination}}
+      {{> footer}}
+    </div>
+</div>
+

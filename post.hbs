@@ -1,0 +1,45 @@
+{{!< default}}
+
+{{#post}}
+<div class="animated fadeInDown">
+<header class="main-header"
+    {{#if image}}
+      style="background-image: url({{image}})"
+    {{/if}} >
+    <div class="container">
+        <h1 class="post-title">{{{title}}}</h1>
+    </div>
+</header>
+<div class="container">
+  <article class="post-container post-container--single ">
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="{{date format="DD MMM YYYY"}}" class="post-meta__date date">{{date format="DD MMM YYYY"}}</time> &#8226; <span class="post-meta__tags tags"><i class='fa fa-tags'></i>  {{tags }}</span>
+        <span class="post-meta__author author"><img src="{{author.image}}" alt="profile image for {{author.name}}" class="avatar post-meta__avatar" /> by {{author.name}}</span>
+      </div>
+    </header>
+
+    <section class="{{post_class}}">
+      {{content}}
+    </section>
+
+  </article>
+  <div class="post-pre-next">
+    <div class='post-pre'>
+        {{#prev_post}}
+        <a href="{{url}}"><i class="fa fa-angle-double-left"></i></a>
+        上一篇：<a href="{{url}}">{{title}}</a>
+        {{/prev_post}}
+    </div>
+    <div class='post-next'>
+      {{#next_post}}
+        <a href="{{url}}">  <i class="fa  fa-angle-double-right"></i></a>
+        下一篇：<a href="{{url}}">{{title}}</a>
+      {{/next_post}}
+    </div>
+  </div>
+   {{> comments}}
+   {{> footer}}
+</div>
+</div>
+{{/post}}

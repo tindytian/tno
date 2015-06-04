@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit"> {{! Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="{{meta_description}}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{meta_title}}">
+    <meta name="twitter:description" content="{{meta_description}}">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{meta_title}}">
+    <meta property="og:description" content="{{meta_description}}">
+    <link rel="icon" href="{{asset " /favicon.ico "}}" />
+    <link href="{{asset " /favicon.ico "}}" rel="shortcut icon">
+    <link href="{{asset " /favicon.ico "}}" rel="apple-touch-icon"> {{! ton Styles }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/tno.min.css"}}" /> {{! style lib }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/lib.min.css"}}" /> {{! Ghost Head }} {{ghost_head}}
+</head>
+
+<body class="{{body_class}} no-js">
+    <!--[if lte IE 8]>
+            <p class="browserupgrade">您使用的浏览器版本<strong>太低</strong>. 请 <a href="http://browsehappy.com/">升级你的浏览器</a></p>
+    <![endif]-->
+    {{#if post}}
+    <a id="btn-navbar-collapse" href="#" class="menu-button">
+          <i class="fa fa-bars"></i>
+    </a>
+   {{/if}}
+    <nav id="menu" class='menu'>
+      {{#if @blog.logo}}
+      <a href="{{@blog.url}}" title="前往 {{@blog.title}} 的主页">
+        <header class="menu-header"  style="background: url('{{@blog.logo}}') no-repeat 15px 15px;background-size: 32px;">
+          <span class="menu-header-title"><a href="{{@blog.url}}" title="link to homepage for {{@blog.title}}">{{@blog.title}}</a></span>
+        </header>
+      </a>
+     {{/if}}
+      <section class="menu-section">
+        <h3 class="menu-section-title">菜单</h3>
+        <ul class="menu-section-list">
+          <li><a href="/" title="主页" class="blog-button"><i class="fa fa-home"></i>主页</a></li>
+          <li><a href="/#blog" title="访问博客" class="blog-button"><i class="fa fa-book"></i>博客</a></li>
+          <li><a href="http://typeof.cn" target="_blank" title="我的项目"><i class="fa fa-rocket"></i>项目</a></li>
+          <li><a href="http://typeof.cn/" title="了解更多关于我"><i class="fa fa-star"></i>关于</a></li>
+          <li><a href="{{@blog.url}}/rss/" title="邮件订阅本站" target="_blank"><i class="fa fa-rss"></i>订阅</a></li>
+        </ul>
+      </section>
+    </nav>
+
+    <div id="panel" class="site-wrapper">
+        <div class="container-fluid">
+            <div class="row o-x-h">
+                {{{body}}}
+            </div>
+        </div>
+    </div>
+    {{! Fixed Button}}
+    <div class="fixed-btn hidden">
+        <a class="go-top" href="#" title="回顶部">
+            <i class="fa fa-angle-up"></i>
+        </a>
+    </div>
+    {{! Ghost Footer }}
+    {{ghost_foot}}
+    {{! The main JavaScript file }}
+    <script type="text/javascript" src="{{asset "js/tno.min.js"}}"></script>
+   <!--  {{! for debug}}
+    <script type="text/javascript" src="/src/js/main.js"></script> -->
+    {{! Google Analitycs }}
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-60936506-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</body>
+
+</html>

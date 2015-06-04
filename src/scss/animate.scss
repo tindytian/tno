@@ -1,0 +1,267 @@
+.animated {
+    @include animation-fill-mode(both);
+    @include animation-duration(1s);
+}
+
+.delay-01 {
+    @include animation-delay(0.5s);
+}
+
+.delay-02 {
+    @include animation-delay(1s);
+}
+
+.delay-03 {
+    @include animation-delay(1.5s);
+}
+
+.delay-04 {
+    @include animation-delay(2s);
+}
+
+.delay-05 {
+    @include animation-delay(2.5s);
+    ;
+}
+
+.delay-06 {
+    @include animation-delay(3s);
+}
+
+.duration-15 {
+    @include animation-duration(1.5s);
+}
+
+.duration-02 {
+    @include animation-duration(2s);
+}
+
+.duration-25 {
+    @include animation-duration(2.5s);
+}
+
+.duration-03 {
+    @include animation-duration(3s);
+}
+
+.duration-04 {
+    @include animation-duration(4s);
+}
+
+@include keyframes(bounce) {
+    0%, 20%, 50%, 80%, 100% {
+        @include transform(translateY(0));
+    }
+    40% {
+        @include transform(translateY(-30px));
+    }
+    60% {
+        @include transform(translateY(-15px));
+    }
+}
+
+.bounce {
+    @include animation-name(bounce);
+}
+
+@include keyframes(swing) {
+    20% {
+        @include transform(rotate(15deg));
+    }
+    40% {
+        @include transform(rotate(-10deg));
+    }
+    60% {
+        @include transform(rotate(5deg));
+    }
+    80% {
+        @include transform(rotate(-5deg));
+    }
+    100% {
+        @include transform(rotate(0deg));
+    }
+}
+
+.swing {
+    @include transform-origin(top center);
+    @include animation-name(swing);
+}
+
+@include keyframes(fadeIn) {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    @include animation-name(fadeIn);
+}
+
+@include keyframes(fadeInUp) {
+    0% {
+        opacity: 0;
+        @include transform(translateY(20px));
+    }
+    100% {
+        opacity: 1;
+        @include transform(translateY(0));
+    }
+}
+
+.fadeInUp {
+    @include animation-name(fadeInUp);
+}
+
+@include keyframes(fadeInDown) {
+    0% {
+        opacity: 0;
+        @include transform(translateY(-20px));
+    }
+    100% {
+        opacity: 1;
+        @include transform(translateY(0));
+    }
+}
+
+.fadeInDown {
+    @include animation-name(fadeInDown);
+}
+
+@include keyframes(fadeInLeft) {
+    0% {
+        opacity: 0;
+        @include transform(translateX(-20px));
+    }
+    100% {
+        opacity: 1;
+        @include transform(translateX(0));
+    }
+}
+
+.fadeInLeft {
+    @include animation-name(fadeInLeft);
+}
+
+@include keyframes(fadeInRight) {
+    0% {
+        opacity: 0;
+        @include transform(translateX(20px));
+    }
+    100% {
+        opacity: 1;
+        @include transform(translateX(0));
+    }
+}
+
+.fadeInRight {
+    @include animation-name(fadeInRight);
+}
+
+@include keyframes(bounceIn) {
+    0% {
+        opacity: 0;
+        @include transform(scale(.3));
+    }
+    50% {
+        opacity: 1;
+        @include transform(scale(1.05));
+    }
+    70% {
+        @include transform(scale(.9));
+    }
+    100% {
+        @include transform(scale(1));
+    }
+}
+
+.bounceIn {
+    @include animation-name(bounceIn);
+}
+
+@include keyframes(bounceInUp) {
+    0% {
+        opacity: 0;
+        @include transform(translateY(2000px));
+    }
+    60% {
+        opacity: 1;
+        @include transform(translateY(-30px));
+    }
+    80% {
+        @include transform(translateY(10px));
+    }
+    100% {
+        @include transform(translateY(0));
+    }
+}
+
+.bounceInUp {
+    @include animation-name(bounceInUp);
+}
+
+@include keyframes(bounceInDown) {
+    0% {
+        opacity: 0;
+        @include transform(translateY(-2000px));
+    }
+    60% {
+        opacity: 1;
+        @include transform(translateY(30px));
+    }
+    80% {
+        @include transform(translateY(-10px));
+    }
+    100% {
+        @include transform(translateY(0));
+    }
+}
+
+.bounceInDown {
+    @include animation-name(bounceInDown);
+}
+
+@include keyframes(zoom) {
+    0% {
+        @include transform(scale(1));
+    }
+    100% {
+        @include transform(scale(1.1));
+    }
+}
+
+.zoom {
+    @include animation-name(zoom);
+}
+
+@include keyframes(slideDown) {
+    0% {
+        @include transform(translateY(-90px));
+        opacity: 0;
+    }
+    100% {
+        @include transform(translateY(0));
+        opacity: 1;
+    }
+}
+
+.slideDown {
+    @include animation-name(slideDown);
+}
+
+@include keyframes(slideUp) {
+    0% {
+        @include transform(translateY(0));
+        opacity: 1;
+    }
+    100% {
+        @include transform(translateY(-90px));
+        opacity: 0;
+    }
+}
+
+.slideUp {
+    @include animation-name(slideUp);
+}

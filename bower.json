@@ -1,0 +1,24 @@
+{
+  "name": "Tno",
+  "version": "1.0.0",
+  "dependencies": {},
+  "homepage": "http://ghostium.oswaldoacauan.com/",
+  "authors": [
+    "TT <tindytian@gmail.com>"
+  ],
+  "description": "A Ghost blog theme based on uno",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "src/assets/bower_components"
+  ],
+  "devDependencies": {
+    "fastclick": "^1.0.6",
+    "font-awesome": "^4.1.0",
+    "prism": "gh-pages",
+    "bourbon": "~4.2.2",
+    "slideout": "https://github.com/Mango/slideout.git#~0.1.6"
+  }
+}

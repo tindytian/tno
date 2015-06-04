@@ -1,0 +1,27 @@
+i {
+    font-family: 'entypo';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.social {
+    font-size: 22px;
+}
+
+.icon-social {
+    font-family: 'entypo-social';
+    font-size: 22px;
+    display: block;
+    position: relative;
+}
+
+.fa {
+    @include transition(all .5s ease-in-out);
+}
+
+.fa:hover {
+    opacity: 1;
+    color: $primary-color;
+    @include transform(rotate(360deg) scale(1.1));
+}
