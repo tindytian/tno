@@ -1,12 +1,12 @@
-# Vno, just another ghost theme
+# Tno, just another ghost theme
 
 (中文在后)
 
 ## Overview
 
-`Vno` is a ghost theme derivated from [Dale Anthony's Uno](https://github.com/daleanthony/uno). The theme features a minimal, responsive design with a cover page, disqus comment integration, font icons and various color options.
+`Tno` is a ghost theme derivated from [Dale Anthony's Uno](https://github.com/daleanthony/uno). The theme features a minimal, responsive design with a cover page, disqus comment integration, font icons and various color options.
 
-I fixed some unexpected behaviors and changed some style and detail, making it more suitable for Chinese (or Japanese and Korea) language content. Please find a live demo of the theme running as my personal blog, [OneV's Den](http://onevcat.com).
+I fixed some unexpected behaviors and changed some style and detail, making it more suitable for Chinese (or Japanese and Korea) language content. Please find a live demo of the theme running as my personal blog, [TT](http://typeof.cn).
 
 ## Features
 
@@ -38,7 +38,7 @@ While JS is widely used, there are always strange systems and browsers not suppo
 
 You should already set up a [ghost blog](https://ghost.org). If you are not prepared yet, please refer to the official [installation page](http://docs.ghost.org/installation/).
 
-When you get ready, just clone the repo to a folder under your blog's theme folder: `content/themes/`. Restart ghost and you can find the `Vno` in the blog setting panle.
+When you get ready, just clone the repo to a folder under your blog's theme folder: `content/themes/`. Restart ghost and you can find the `Tno` in the blog setting panle.
 
 ### Cover
 
@@ -151,9 +151,9 @@ Vno is followed with Uno and be licensed as [Creative Commons Attribution 4.0 In
 
 ## 总览
 
-`Vno` 是一个从 [Dale Anthony 的 Uno](https://github.com/daleanthony/uno) 派生出的 Ghost 主题。它遵从简洁和响应式的设计风格，拥有一个独立的封面，易于集成的 Disqus 评论系统，字体图标以及多种颜色。
+`Tno` 是一个从 [Dale Anthony 的 Uno](https://github.com/daleanthony/uno) 派生出的 Ghost 主题。它遵从简洁和响应式的设计风格，拥有一个独立的封面，易于集成的 Disqus 评论系统，字体图标以及多种颜色。
 
-我在原来的基础上对一些预料外的行为进行了修正，并且改变了一些样式和细节，这样主题在中文 (以及日文和韩文) 上表现得更好。我的个人博客 [OneV's Den](http://onevcat.com) 正在使用这个主题，您可以看看实际的效果。
+我在原来的基础上对一些预料外的行为进行了修正，并且改变了一些样式和细节，这样主题在中文 (以及日文和韩文) 上表现得更好。我的个人博客 [TT](http://typeof.cn) 正在使用这个主题，您可以看看实际的效果。
 
 ## 特性
 
