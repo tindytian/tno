@@ -1,21 +1,26 @@
 <header class="panel-cover {{#if post}}panel-cover--collapsed{{/if}}">
-    <div class="panel-main  affix hidden-sm">
+    <div class="panel-main  affix hidden-sm  panel-cover--image" {{#if @blog.cover}} style="background-image: url({{@blog.cover}})" {{/if}} >
         <div class="panel-main__inner panel-inverted">
             <div class="panel-main__content">
-                <div class=" animated fadeInDown duration-15">
+                <div class="animated fadeInUpBig duration-05">
+                    <div class="animated bounce delay-07 duration-02">
                     {{#if @blog.logo}}
                     <a href="{{@blog.url}}" title="前往 {{@blog.title}} 的主页">
                         <img src="{{@blog.logo}}" width="100" alt="{{@blog.title}} logo" class="panel-cover__logo logo" /></a>
                     {{/if}}
+                    </div>
+                 </div>
+                 <div class="animated fadeInUp duration-03 delay-05">
                     <h1 class="panel-cover__title panel-title">
                     <a href="{{@blog.url}}" title="link to homepage for {{@blog.title}}">{{@blog.title}}</a>
                     </h1>
                     <hr class="panel-cover__divider">
+                 </div>
+                 <div class="animated fadeInUp duration-03 delay-04">
                     <p class="panel-cover__description">{{@blog.description}}</p>
                     <hr class="panel-cover__divider panel-cover__divider--secondary">
                 </div>
-                <div class="navigation-wrapper animated fadeIn duration-04 delay-02">
-                    <div>
+                <div class="navigation-wrapper animated fadeInUp duration-03 delay-03">
                         <nav class="cover-navigation cover-navigation--primary">
                             <ul class="navigation">
                                 <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li>
@@ -24,14 +29,11 @@
                                 <li class="navigation__item"><a href="{{@blog.url}}/rss/" title="邮件订阅本站">订阅</a></li>
                             </ul>
                         </nav>
-                    </div>
-                    <div>
-                        {{> social}}
-                    </div>
+                </div>
+                <div class="animated fadeInUp duration-03 delay-02">
+                    {{> social}}
                 </div>
             </div>
-        </div>
-        <div class="panel-cover--image animated duration-03 delay-01 " {{#if @blog.cover}} style="background-image: url({{@blog.cover}})" {{/if}}>
         </div>
         <div class="panel-cover--overlay cover-disabled"></div>
     </div>

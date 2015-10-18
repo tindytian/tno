@@ -74,33 +74,32 @@
     overflow: hidden;
     margin-bottom: 2rem;
     min-height: 180px;
-    height: 30vh;
+    height: 40vh;
     @media (min-width: $screen-sm-min) {
-        height: 30vh;
+        height: 40vh;
     }
     @media (min-width: $screen-md-min) {
-        height: 50vh;
+        height: 60vh;
     }
     @media (min-width: $screen-lg-min) {
-        height: 50vh;
+        height: 60vh;
     }
     & .post-title {
-        color: #fff;
-        padding-top: 40px;
-        position: fixed;
-        top: 15vh;
+        color: $white;
+        padding-top: 15vh;
         font-size: 1.8em;
+        text-align: left;
         @media (min-width: $screen-sm-min) {
-            top: 15vh;
+            padding-top: 15vh;
             font-size: 1.8em;
         }
         @media (min-width: $screen-md-min) {
-            top: 30vh;
-            font-size: 2.5em;
+            padding-top: 30vh;
+            font-size: 2.0em;
         }
         @media (min-width: $screen-lg-min) {
-            top: 30vh;
-            font-size: 3.0em;
+            padding-top: 30vh;
+            font-size: 2.2em;
         }
     }
 }

@@ -28,6 +28,10 @@
     @include animation-delay(3s);
 }
 
+.delay-07 {
+    @include animation-delay(4s);
+}
+
 .duration-15 {
     @include animation-duration(1.5s);
 }
@@ -44,8 +48,13 @@
     @include animation-duration(3s);
 }
 
+
 .duration-04 {
     @include animation-duration(4s);
+}
+
+.duration-05 {
+    @include animation-duration(5s);
 }
 
 @include keyframes(bounce) {
@@ -115,6 +124,19 @@
     @include animation-name(fadeInUp);
 }
 
+@include keyframes(fadeInUpBig) {
+    0% {
+        opacity: 0;
+        @include transform(translateY(400px));
+    }
+    100% {
+        opacity: 1;
+        @include transform(translateY(0));
+    }
+}
+.fadeInUpBig {
+    @include animation-name(fadeInUpBig);
+}
 @include keyframes(fadeInDown) {
     0% {
         opacity: 0;

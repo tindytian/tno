@@ -105,19 +105,17 @@
     position: fixed;
     right: 2%;
     bottom: 2%;
-    border: 1px solid #eeeeee;
-    background-color: white;
+    border: 1px solid $gray-dark;
+    background-color: $white;
     font-size: 25px;
     z-index: 1040;
-    .go-top {
-        // border-bottom: 1px solid #eeeeee;
-    }
+    border-radius: $border-radius;
     a {
         display: inline-block;
         width: 40px;
         height: 40px;
         text-align: center;
-        color: #555555;
+        color: $gray-dark;
         text-decoration: none;
         i {
             vertical-align: middle;

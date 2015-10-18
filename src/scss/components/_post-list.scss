@@ -15,9 +15,14 @@
         }
     }
 }
-.main-post-list{
-      margin-top: 40px;
+
+.main-post-list {
+    margin-top: 40px;
+    @media (max-width: $screen-sm-max) {
+        display: block !important;
+    }
 }
+
 .post-list__post-title {
     margin-top: 0;
     margin-bottom: .2em;
@@ -42,7 +47,6 @@
     margin-right: .5em;
     color: darken($gray, 2%);
 }
-
 
 .post-list__meta--tags {
     margin-left: .5em;

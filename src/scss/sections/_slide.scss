@@ -32,7 +32,7 @@
     background-color: #1D1F20;
     box-shadow: inset -1px 0 3px rgba(0, 0, 0, .3);
     a {
-        color: #fff;
+        color: $white;
     }
 }
 
@@ -42,7 +42,7 @@
 }
 
 .menu-section {
-    margin:10px 0 25px 0;
+    margin: 10px 0 25px 0;
 }
 
 .menu-section-title {
@@ -95,8 +95,20 @@
         outline: 0;
     }
     &:hover {
-        background: #fff;
-        color: #222;
+        background: $white;
+        color: $gray-dark;
+    }
+    &.invert {
+        background: $white;
+        color: $gray-dark;
+        border-color:$gray-dark;
+    }
+    &.invert:focus{
+        outline: 1;
+    }
+    &.invert:hover{
+        color: $primary-color;
+        border-color:$primary-color;
     }
 }
 
@@ -104,7 +116,7 @@
     color: #fff;
     border-color: rgba(255, 255, 255, 0.6);
     &:hover {
-        color: #222;
+        color: $gray-darker;
     }
 }
 
@@ -112,7 +124,7 @@
     padding: 0 12px;
     background: #1D1F20;
     border-color: #1D1F20;
-    color: #fff;
+    color: $white;
     @include transform (translate3D(230px, 0, 0));
 }
 

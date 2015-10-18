@@ -18,14 +18,14 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="{{meta_title}}">
     <meta property="og:description" content="{{meta_description}}">
-    <link rel="icon" href="{{asset " /favicon.ico "}}" />
-    <link href="{{asset " /favicon.ico "}}" rel="shortcut icon">
-    <link href="{{asset " /favicon.ico "}}" rel="apple-touch-icon"> {{! ton Styles }}
+    <link rel="icon" href="{{asset "/favicon.ico "}}" />
+    <link href="{{asset "/favicon.ico"}}" rel="shortcut icon">
+    <link href="{{asset "/favicon.ico"}}" rel="apple-touch-icon"> {{! ton Styles }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/tno.min.css"}}" /> {{! style lib }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/lib.min.css"}}" /> {{! Ghost Head }} {{ghost_head}}
 </head>
 
-<body class="{{body_class}} no-js">
+<body class="{{body_class}}">
     <!--[if lte IE 8]>
             <p class="browserupgrade">您使用的浏览器版本<strong>太低</strong>. 请 <a href="http://browsehappy.com/">升级你的浏览器</a></p>
     <![endif]-->
@@ -70,6 +70,8 @@
     {{! Ghost Footer }}
     {{ghost_foot}}
     {{! The main JavaScript file }}
+    {{! for debug }}
+    <!--<script type="text/javascript" src="{{asset "js/jquery.min.js"}}"></script>-->
     <script type="text/javascript" src="{{asset "js/tno.min.js"}}"></script>
     {{! Google Analitycs }}
     <script type="text/javascript">

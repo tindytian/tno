@@ -1,14 +1,17 @@
-# Tno, just another ghost theme
+# Tno, just a ghost theme
 
 (中文在后)
 
 ## Overview
 
-`Tno` is a ghost theme derivated from [Dale Anthony's Uno](https://github.com/daleanthony/uno). The theme features a minimal, responsive design with a cover page, disqus comment integration, font icons and various color options.
+`Tno` is a ghost theme derivated from [Dale Anthony's Uno](https://github.com/daleanthony/uno)and [casper](https://github.com/TryGhost/Casper). The theme features a minimal, responsive design with a cover page, disqus comment integration, font icons and various color options and the mobile has a good experience.
 
-I fixed some unexpected behaviors and changed some style and detail, making it more suitable for Chinese (or Japanese and Korea) language content. Please find a live demo of the theme running as my personal blog, [TT](http://typeof.cn).
+I fixed some unexpected behaviors and changed some style and detail, making it more suitable for Chinese language content and improved the user experience of mobile. Please find a live demo of the theme running as my personal blog, [tindy's blog](http://www.typeof.cn).
 
 ## Features
+
+### tools
+use [bower](http://bower.io) to manange package and [gulp](http://gulpjs.com) to built project.
 
 ### Cover page
 
@@ -16,22 +19,25 @@ There is a beautiful full screen landing page for you to display a cover image w
 
 ### Responsive and Animation
 
-Vno is following the responsive design and works well in mobile devices. You may find some events is driven by great animation, thanks to the [Animate.css](http://daneden.github.io/animate.css/), which makes all these possible.
+Tno is following the responsive design and works well in mobile devices. You may find some events is driven by great animation, thanks to the [Animate.css](http://daneden.github.io/animate.css/), which makes all these possible.
 
 ### Disqus comments and Font Awesome
 
 Integrate comment system with a simple user name input with [Disqus](https://disqus.com). Use [Font Awesome](http://fontawesome.io) icon to express yourself better. They are perfect for a personal site (such as blog), as well as some commercial CMS.
 
-### SASS and No-JS fallback
+### SASS
 
-Vno is built on SASS, but it is not a must flow. If you know HTML and CSS, making modifications to the theme should be super simple.
-
-While JS is widely used, there are always strange systems and browsers not supporting JS. Don't worry, there is fallback if there is no JS. So you can just see a proper layout even if the JS does not work.
+Tno is built on SASS, but it is not a must flow. If you know HTML and CSS, making modifications to the theme should be super simple.
 
 ### Code highlight
 
-[highlight.js](http://highlightjs.org) is used as the code highlight engine of this theme. You can get a clean and good-look code block in your tech blog.
+[prism.js](http://http://prismjs.com) is used as the code highlight engine of this theme. You can get a clean and good-look code block in your tech blog.
 
+### mobile
+
+[fastclick](https://github.com/ftlabs/fastclick)polyfill to remove click delays on browsers with touch UIs
+
+[slideout](https://github.com/Mango/slideout)a touch slideout navigation menu for your mobile web apps
 ## Usage
 
 ### Install
@@ -44,7 +50,7 @@ When you get ready, just clone the repo to a folder under your blog's theme fold
 
 #### Image and Color
 
-Place your cover image under `assets/images/` folder and replace the default image file `background-cover.jpg`. You can change the cover overlap color as well. Change the `cover-orange` in the line of `<div class="panel-cover--overlay cover-orange"></div>` in `partials/side-panel.hbs` to the color you like. There are 7 options by default: 
+Place your cover image under `assets/images/` folder and replace the default image file `background-cover.jpg`. You can change the cover overlap color as well. Change the `cover-orange` in the line of `<div class="panel-cover--overlay cover-orange"></div>` in `partials/side-panel.hbs` to the color you like. There are 7 options by default:
 
 * `cover-blue` - #2568A3
 * `cover-green` - #156F78
@@ -74,88 +80,51 @@ You need to know your `short name` of Disqus. Add it to `disqus_shortname` in `c
 
 ### Code highlight theme
 
-Vno is using the classic [tomorrow](http://jmblog.github.io/color-themes-for-highlightjs/tomorrow/) theme as a default. You can select your favourite color scheme and put it under `assets/css` folder directly. Then change the `css/tomorrow.css` in `default.hbs` to make it live. For more color schemes, see [this site](http://jmblog.github.com/color-themes-for-highlightjs/).
+Tno is using the classic [okaidia](http://prismjs.com/) theme as a default. You can select your favourite color scheme and put it under `assets/css` folder directly. Then change the `css/okaidia.css` in `default.hbs` to make it live. For more color schemes, see [this site](http://prismjs.com/).
 
 ## Development
 
-In order to develop or make changes to the theme you will need to have the sass compiler and bourbon both installed.  If you are running a Ghost environment locally then you should already have these installed as those are required to run Ghost.
+### bower
 
-To check installation run the following commands from a terminal and you should see the `> cli output` but your version numbers may vary.
-
-### SASS
-
-```bash
-sass -v
-> Sass 3.3.6 (Maptastic Maple)
+Use bower installation bourbon/fastclick/prism/slideout and other package
 ```
-
-If for some reason SASS isn't installed follow the instructions from the [Sass install page](http://sass-lang.com/install)
-
-### Bourbon
-```bash
-bourbon version
-> Bourbon 4.0.1
+bower install
 ```
+### gulp
 
-If Bourbon isn't installed follow the installation instructions on the [Bourbon website](http://bourbon.io)
-
-### Go go dev
-
-Once installation is verified we will need to go mount the bourbon mixins into the `scss` folder.
-
-From the project root run `bourbon install` with the correct path
-
-```bash
-bourbon install --path assets/scss
-> bourbon files installed to assets/scss/bourbon/
-//Or "Bourbon files already installed, doing nothing." if you already installed it.
+Use gulp compression merge scripts , and style sheets packaged specified directory
 ```
-
-Now that we have the bourbon mixins inside of the `scss` src folder. We can now use the sass cli command to watch the scss files for changes and recompile them.
-
-```bash
-pwd
-> In the vno theme root folder: {blog_path}/content/themes/vno
-sass --watch assets/scss/vno.scss:assets/css/vno.css
->>>> Sass is watching for changes. Press Ctrl-C to stop.
-```
-
-Now, you can change the scss files and all change will be complied to the final `/css/vno.css` automatically.
-
-### OSX Maverick
-
-Some people may receive this error when trying to run the `sass --watch` command
-
-```bash
-> LoadError: cannot load such file -- rb-fsevent
-  Use --trace for backtrace.
-```
-
-This is a known issue with the [Sass on OSX Maverick](http://stackoverflow.com/questions/22413834/getting-error-when-using-command-line-for-sass-to-watch-files) as indicated install the `rb-fsevent` gem.
-
-```bash
-gem install rb-fsevent
+gulp
 ```
 
 ### Good luck
 
-Enjoy it and give me feedback. If you find any bugs (in fact I am new to web dev), do not hesitate to point them out, and a pull request would be appreciated!
+Enjoy it and give me feedback. welcome to pull request !
 
 ## Licence
 
-Great thanks to [Dale Anthony](https://github.com/daleanthony) and his [Uno](https://github.com/daleanthony/uno). Vno is based on Uno, and contains a lot of modification on page layout, animation, font and some more things I can not remember.
+Great thanks to [Dale Anthony](https://github.com/daleanthony) and his [Uno](https://github.com/daleanthony/uno). Tno is based on Uno, and contains a lot of modification on page layout, animation, font and some more things I can not remember.
 
-Vno is followed with Uno and be licensed as [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/). See the link for more information.
+Tno is followed with Uno and be licensed as [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/). See the link for more information.
 
 ---
 
 ## 总览
 
-`Tno` 是一个从 [Dale Anthony 的 Uno](https://github.com/daleanthony/uno) 派生出的 Ghost 主题。它遵从简洁和响应式的设计风格，拥有一个独立的封面，易于集成的 Disqus 评论系统，字体图标以及多种颜色。
+`Tno` 是一个从 [Dale Anthony 的 Uno](https://github.com/daleanthony/uno)和官方的 [casper](https://github.com/TryGhost/Casper)派生出的 Ghost 主题。它遵从简洁和响应式的设计风格，拥有一个独立的封面，易于集成的 Disqus 评论系统，字体图标以及多种颜色,并且在移动端有不错的体验。
 
-我在原来的基础上对一些预料外的行为进行了修正，并且改变了一些样式和细节，这样主题在中文 (以及日文和韩文) 上表现得更好。我的个人博客 [TT](http://typeof.cn) 正在使用这个主题，您可以看看实际的效果。
+我在原来的基础上对一些预料外的行为进行了修正，并且改变了一些样式和细节，这样主题在中文 上表现得更好,并且加强了移动端的用户体验。我的个人博客 [tindy's blog](http://www.typeof.cn) 正在使用这个主题，您可以看看实际的效果。
 
 ## 特性
+
+### 工具
+这里使用[bower](http://bower.io)包的依赖并且用[gulp](http://gulpjs.com)来构建工程
+
+### 移动端
+
+[fastclick](https://github.com/ftlabs/fastclick)移除click事件的延迟
+
+[slideout](https://github.com/Mango/slideout)一个移动端的滑动菜单
 
 ### 封面
 
@@ -163,17 +132,15 @@ Vno is followed with Uno and be licensed as [Creative Commons Attribution 4.0 In
 
 ### 响应式设计和动画
 
-Vno 遵循响应式设计，所以应该能在各种设备上都表现良好。很多事件是由动画驱动的，这要感谢 [Animate.css](http://daneden.github.io/animate.css/) 的帮助。
+Tno 遵循响应式设计，所以应该能在各种设备上都表现良好。很多事件是由动画驱动的，这要感谢 [Animate.css](http://daneden.github.io/animate.css/) 的帮助。
 
 ### Disqus 评论系统和 Font Awesome 字体
 
 如果您打算使用 [Disqus](https://disqus.com) 的话，集成评论系统就只是填一个用户名那么简单。您也可以使用 [Font Awesome](http://fontawesome.io) 的图标字体来获得更好的表现。这些不仅对于个人站点 (比如博客) 来说是很好的选择，对于一些商用的 CMS (内容管理系统) 来说也是不错的解决方案。
 
-### SASS 和 No-JS 回滚
+### SASS
 
-Vno 是基于 SASS 创建的，但是如果您不再希望继续维护可扩展性，您也可以忽略这个再开发的流程。不过如果您懂一些 HTML 和 CSS 的话，对现有主题做出修改是轻而易举的。
-
-虽然 JS 已经被广泛使用了，但是还是总会有一些奇怪的系统或是浏览器不支持 JS。得益于 Vno 对于没有 JS 时进行了回滚处理，所以您也不必担心。
+Tno 是基于 SASS 创建的，但是如果您不再希望继续维护可扩展性，您也可以忽略这个再开发的流程。不过如果您懂一些 HTML 和 CSS 的话，对现有主题做出修改是轻而易举的。
 
 ### 代码高亮
 
@@ -185,7 +152,7 @@ Vno 是基于 SASS 创建的，但是如果您不再希望继续维护可扩展�
 
 您应该已经建立了一个可用的 [ghost 博客](https://ghost.org)。如果您还没有准备好，请参考[官方的安装页面](http://docs.ghost.org/installation/)来配置一个属于您自己的 ghost 博客。
 
-一旦您准备就绪，只需要将这个 repo clone 到您博客的主题文件夹下：`content/themes/`，然后重启 ghost，您应该就能在博客的设定面板中看到 `Vno` 了。
+一旦您准备就绪，只需要将这个 repo clone 到您博客的主题文件夹下：`content/themes/`，然后重启 ghost，您应该就能在博客的设定面板中看到 `Tno` 了。
 
 ### 封面
 
@@ -222,79 +189,32 @@ Vno 是基于 SASS 创建的，但是如果您不再希望继续维护可扩展�
 
 ### 代码高亮主题
 
-Vno 使用经典的 [tomorrow](http://jmblog.github.io/color-themes-for-highlightjs/tomorrow/) 主题作为默认的代码高亮配色。您也可以选择和使用您最喜欢的配色，将配色文件直接放到 `assets/css` 文件夹下， 然后将 `default.hbs` 中的 `css/tomorrow.css` 改为您的文件来使配置生效。想要更多的配色方案的话，可以看看这个[站点](http://jmblog.github.com/color-themes-for-highlightjs/)。
+Tno 使用经典的 [tomorrow](http://jmblog.github.io/color-themes-for-highlightjs/tomorrow/) 主题作为默认的代码高亮配色。您也可以选择和使用您最喜欢的配色，将配色文件直接放到 `assets/css` 文件夹下， 然后将 `default.hbs` 中的 `css/tomorrow.css` 改为您的文件来使配置生效。想要更多的配色方案的话，可以看看这个[站点](http://jmblog.github.com/color-themes-for-highlightjs/)。
 
 ## 开发
 
-为了简单地对主题进行修改和开发，您需要安装 sass 编译器以及 bourbon。如果您在本地有 ghost 环境的话，这些应该已经安装好了，因为 ghost 运行是需要这些部件的。
+### bower
 
-您可以在终端中进行一些检查，来看看是否已经安装完成。如果没有问题的话，您应该可以在命令行后看到对应的工具的版本号。
-
-### SASS
-
-```bash
-sass -v
-> Sass 3.3.6 (Maptastic Maple)
+使用bower安装Bourbon/fastclick/prism/slideout等包
+```
+bower install
 ```
 
-如果 SASS 没有能正确安装的话，请参见 [Sass 安装页面](http://sass-lang.com/install)进行安装。
+### gulp
 
-### Bourbon
-
-```bash
-bourbon version
-> Bourbon 4.0.1
+使用gulp压缩合并脚本和样式表，打包指定目录
 ```
-
-如果 Bourbon 没有能正确安装的话，请参见 [Bourbon 的网站](http://bourbon.io)进行安装。
-
-### 开始开发
-
-验证安装后就可以开始开发了。首先我们要将 bourbon 加载到 `scss` 文件夹里。
-
-在主题文件夹下执行 `bourbon install` 来加载 bourbon：
-
-```bash
-bourbon install --path assets/scss
-> bourbon files installed to assets/scss/bourbon/
-//Or "Bourbon files already installed, doing nothing." if you already installed it.
-```
-
-然后就可以使用 sass 的命令行工具来监视文件夹中的 scss 文件的改动，并自动重新编译了。
-
-```bash
-pwd
-> In the vno theme root folder: {blog_path}/content/themes/vno
-
-sass --watch assets/scss/vno.scss:assets/css/vno.css
->>>> Sass is watching for changes. Press Ctrl-C to stop.
-```
-
-现在，任何对于 scss 文件的改动都将自动反映到最终的 `/css/vno.css` 文件中了。
-
-### OSX Maverick
-
-有些人在运行 `sass --watch` 时可能会遇到如下错误：
-
-```bash
-> LoadError: cannot load such file -- rb-fsevent
-  Use --trace for backtrace.
-```
-
-这是一个 Sass 在 OSX Maverick 下的[已知问题](http://stackoverflow.com/questions/22413834/getting-error-when-using-command-line-for-sass-to-watch-files)，新版本中应该已经修复。请尝试将 Sass 升级到最新版本，或者安装 `rb-fsevent` 这个gem：
-
-```bash
-gem install rb-fsevent
+gulp
 ```
 
 ### 祝你好运
 
-玩得开心，也请记得给我反馈。如果您发现了什么 bug (我刚入门 web 开发，这简直是必然的)，请直接指出，如果还能附带一个 pull request 修正的话，那真的感激万分！
+欢迎 pull request！
 
 如果您觉得这个主题还不错的话，欢迎加颗星星或者 follow 我一下以示支持，这将对我和我的项目的发展提供不可估量的帮助。再次感谢。
 
 ## 许可
 
-非常感谢 [Dale Anthony](https://github.com/daleanthony) 和他的 [Uno](https://github.com/daleanthony/uno)。Vno 是一个基于 Uno 大量工作的主题，我在页面布局，动画，字体以及其他一些我也不记得了的地方做出了不少改动。
+非常感谢 [Dale Anthony](https://github.com/daleanthony) 和他的 [Uno](https://github.com/daleanthony/uno)。Tno 是一个基于 Uno 大量工作的主题，我在页面布局，动画，字体，移动端以及其他的地方做出了不少改动。
 
-Vno 遵循 Uno 的要求按照 [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) 进行授权。点击上面的链接可以了解到更多信息。
+Tno 遵循 Uno 的要求按照 [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) 进行授权。点击上面的链接可以了解到更多信息。

@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var $panel_cover = $('.panel-cover'),
-        $panel_main=$('.panel-main'),
+        $panel_main = $('.panel-main'),
         top = $(".fixed-btn"),
         navbar_collapse = $("#btn-navbar-collapse"),
         SetPostsPosition = function(animate) {
@@ -11,8 +11,6 @@ $(document).ready(function() {
                 $panel_main.css('width', '30%');
             }
         }
-    $panel_cover.height($(window).height());
-    $('body').removeClass('no-js');
 
     $('a.blog-button').click(function() {
         if (location.hash && location.hash == "#blog") return;
@@ -40,8 +38,10 @@ $(document).ready(function() {
         var $scrollTop = $(this).scrollTop();
         if (200 < $scrollTop) {
             top.fadeIn();
+            navbar_collapse.addClass('invert');
         } else {
             top.fadeOut();
+            navbar_collapse.removeClass('invert');
         }
     });
 
@@ -68,5 +68,4 @@ $(document).ready(function() {
 
     //faskclick
     FastClick.attach(document.body);
-
 });
