@@ -35,9 +35,9 @@ Tno is built on SASS, but it is not a must flow. If you know HTML and CSS, makin
 
 ### mobile
 
-[fastclick](https://github.com/ftlabs/fastclick)polyfill to remove click delays on browsers with touch UIs
+[fastclick](https://github.com/ftlabs/fastclick) polyfill to remove click delays on browsers with touch UIs
 
-[slideout](https://github.com/Mango/slideout)a touch slideout navigation menu for your mobile web apps
+[slideout](https://github.com/Mango/slideout) a touch slideout navigation menu for your mobile web apps
 ## Usage
 
 ### Install
@@ -122,9 +122,9 @@ Tno is followed with Uno and be licensed as [Creative Commons Attribution 4.0 In
 
 ### 移动端
 
-[fastclick](https://github.com/ftlabs/fastclick)移除click事件的延迟
+[fastclick](https://github.com/ftlabs/fastclick) 移除click事件的延迟
 
-[slideout](https://github.com/Mango/slideout)一个移动端的滑动菜单
+[slideout](https://github.com/Mango/slideout) 一个移动端的滑动菜单
 
 ### 封面
 
